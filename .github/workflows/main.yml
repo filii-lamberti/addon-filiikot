@@ -20,10 +20,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: shellcheck filiikot/rootfs/etc/services.d/filiikot/run
-        run: shellcheck
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
+      - name: hadolint
+        run: hadolint "filiikot/Dockerfile"
+      - name: yamllint
+        run: yamllint .
 
   build:
     needs: test
