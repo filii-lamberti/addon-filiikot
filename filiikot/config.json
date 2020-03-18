@@ -18,5 +18,5 @@
     "logging": "bool?",
     "debugging": "bool?"
   },
-  "image": "filii/filiikot"
+  "image": "filii/filiikot-{arch}"
 }
