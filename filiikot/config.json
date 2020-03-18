@@ -19,5 +19,6 @@
   "schema": {
     "logging": "bool?",
     "debugging": "bool?"
-  }
+  },
+  "image": "filii/filiikot"
 }
