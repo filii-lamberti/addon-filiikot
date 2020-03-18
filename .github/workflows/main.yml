@@ -20,13 +20,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: ls -a
       - run: cd filiikot/rootfs/opt/filiikot
+      - run: ls -a
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - run: ls -a
       - name: Install dependencies
         run: npm ci
+      - run: ls -a
       - run: |
           npm install eslint \
           eslint-config-airbnb \
