@@ -20,24 +20,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: ls -a
-      - run: cd filiikot/rootfs/opt/filiikot
-      - run: ls -a
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: ls -a
       - name: Install dependencies
         run: npm ci
-      - run: ls -a
+        working-directory: ./filiikot/rootfs/opt/filiikot
       - run: |
           npm install eslint \
           eslint-config-airbnb \
           eslint-plugin-import \
           eslint-plugin-jsx-a11y \
           eslint-plugin-react
+        working-directory: ./filiikot/rootfs/opt/filiikot
       - run: node_modules/eslint/bin/eslint.js app.js
+        working-directory: ./filiikot/rootfs/opt/filiikot
       # - name: hadolint
       #   run: hadolint "filiikot/Dockerfile"
       # - name: yamllint
