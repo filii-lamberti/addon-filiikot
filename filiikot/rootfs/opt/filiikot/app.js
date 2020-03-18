@@ -7,7 +7,7 @@ let options;
 
 if (!supervisorToken) {
   // eslint-disable-next-line no-console
-  console.log('You are not running this as an Hass.io add-on!');
+  console.log('You are not running this as an Home Assistant add-on!');
   // Here we import the options.json file
   options = JSON.parse(fs.readFileSync('./options.json', 'utf8'));
   options.mqttBrokerUrl = 'mqtt://localhost';

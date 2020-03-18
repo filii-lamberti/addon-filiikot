@@ -34,15 +34,15 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="FiliiKot" \
-    io.hass.description="A FiliiKot add-on for Hass.io!" \
+    io.hass.name="Filiikot" \
+    io.hass.description="A Filiikot add-on for Home Assistant!" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Jorim Tielemans <tielemans.jorim@gmail.com>" \
-    org.label-schema.description="A FiliiKot add-on for Hass.io!" \
+    org.label-schema.description="A Filiikot add-on for Home Assistant!" \
     org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="FiliiKot" \
+    org.label-schema.name="Filiikot" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://addons.community" \
     org.label-schema.usage="https://gitlab.com/filii-lamberti/filii-addons/blob/master/filiikot-addon/README.md" \
