@@ -24,6 +24,9 @@ jobs:
         uses: reviewdog/action-misspell@v1.1.6
       - name: Run eslint with reviewdog
         uses: reviewdog/action-eslint@v1.2.0
+        with:
+          reporter: github-check
+          eslint_flags: filiikot/rootfs/opt/filiikot
       - name: Run shellcheck with reviewdog
         uses: reviewdog/action-shellcheck@v1.1.3
       - name: Run hadolint with reviewdog
