@@ -8,13 +8,6 @@ on:
     branches: [master]
 
 jobs:
-  # lint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Eslint
-  #       run:
-
   lint:
     runs-on: ubuntu-latest
 
@@ -38,10 +31,6 @@ jobs:
       # Run ESLint
       - run: node_modules/eslint/bin/eslint.js app.js
         working-directory: ./filiikot/rootfs/opt/filiikot
-      # - name: hadolint
-      #   run: hadolint "filiikot/Dockerfile"
-      # - name: yamllint
-      #   run: yamllint .
 
   docker:
     needs: lint
@@ -52,5 +41,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test docker build
         run: docker run --rm --privileged -v ~/.docker:/root/.docker -v /var/run/docker.sock:/var/run/docker.sock -v "$(pwd)":/data homeassistant/amd64-builder --target filiikot --amd64 --test
-      # - name: Build and push Docker image
-      #   run: docker run --rm --privileged -v ~/.docker:/root/.docker -v /var/run/docker.sock:/var/run/docker.sock -v "$(pwd)":/data homeassistant/amd64-builder --target filiikot --all --test --docker-user ${{ secrets.DOCKER_USERNAME }} --docker-password ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build and push Docker image
+        run: docker run --rm --privileged -v ~/.docker:/root/.docker -v /var/run/docker.sock:/var/run/docker.sock -v "$(pwd)":/data homeassistant/amd64-builder --target filiikot --all --test --docker-user ${{ secrets.DOCKER_USERNAME }} --docker-password ${{ secrets.DOCKER_PASSWORD }}
