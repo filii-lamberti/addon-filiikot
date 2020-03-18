@@ -2,9 +2,6 @@ ARG BUILD_FROM=hassioaddons/base:7.0.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-# Add env
-ENV VERSION_TAG="v3.0.1"
-
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -13,23 +10,13 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         g++=9.2.0-r3 \
         make=4.2.1-r2 \
-        python2=2.7.16-r3 \
-    \
-    && curl -J -L -o /tmp/archive.zip \
-        "https://gitlab.com/filii-lamberti/filiikot_nodejs/-/archive/${VERSION_TAG}/filiikot_nodejs-${VERSION_TAG}.zip" \
-    \
-    && mkdir -p /tmp/filiikot \
-    && unzip -d /tmp/filiikot /tmp/archive.zip \
-    && mkdir -p /opt/filiikot \
-    \
-    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/public /opt/filiikot/ \
-    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/app.js /opt/filiikot/ \
-    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/package-lock.json /opt/filiikot/ \
-    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/package.json /opt/filiikot/ \
-    \
-    && rm -fr /tmp/* \
-    \
-    && cd /opt/filiikot \
+        python2=2.7.16-r3
+
+# Copy root filesystem
+COPY rootfs /
+
+RUN \
+    cd /opt/filiikot \
     \
     && npm install \
         --no-optional \
@@ -38,9 +25,6 @@ RUN \
     && npm cache clear --force \
     \
     && apk del --purge .build-dependencies
-
-# Copy root filesystem
-COPY rootfs /
 
 # Build arugments
 ARG BUILD_ARCH
