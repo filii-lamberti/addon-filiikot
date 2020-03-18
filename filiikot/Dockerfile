@@ -15,10 +15,6 @@ RUN \
         make=4.2.1-r2 \
         python2=2.7.16-r3 \
     \
-    && apk add --no-cache \
-        nodejs=12.15.0-r1 \
-        npm=12.15.0-r1 \
-    \
     && curl -J -L -o /tmp/archive.zip \
         "https://gitlab.com/filii-lamberti/filiikot_nodejs/-/archive/${VERSION_TAG}/filiikot_nodejs-${VERSION_TAG}.zip" \
     \

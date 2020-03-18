@@ -1,0 +1,33 @@
+{
+	"name": "filiikot",
+	"version": "3.0.1",
+	"description": "Node.js app voor ishetfiliikotopen.be",
+	"author": "Filii Lamberti",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"express": "^4.17.1",
+		"moment": "^2.24.0",
+		"mqtt": "^3.0.0",
+		"socket.io": "^2.3.0"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb": "^18.1.0",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.19.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://gitlab.com/filii-lamberti/filiikot_nodejs.git"
+	},
+	"bugs": {
+		"url": "https://gitlab.com/filii-lamberti/filiikot_nodejs/issues"
+	},
+	"homepage": "https://gitlab.com/filii-lamberti/filiikot_nodejs#readme"
+}

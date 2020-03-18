@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Is het Filiikot open?</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta http-equiv="x-ua-compatible" content="IE=edge"> -->
+
+    <meta name="keywords" content="filii,filiikot,open,closed,gesloten,lamberti">
+    <meta name="description" content="Statuspagina voor het Filiikot van Filii Lamberti">
+    <meta name="author" content="Jorim Tielemans">
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body class="text-center is-preload">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <!-- <h3 class="masthead-brand">Cover</h3>
+                <h1 class="cover-heading">Is het Filiikot open?</h1> -->
+                <p class="lead" id="statusMessage"></p>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <img alt="Filiikot status" id="image" src="img/false.png"><br>
+            <h3>Temperatuur: <span id="temperature"></span> °C</h3>
+            <h3>Vochtigheid: <span id="humidity"></span> %</h3>
+            <h3 id="people"></h3>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mastfoot mt-auto" id="footer">
+            <div class="inner">
+                &copy; Filii Lamberti<br>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#">ishetfiliikotopen.be</a>
+                    <a class="nav-link" href="https://www.filii.be">filii.be</a>
+                    <!-- <a class="nav-link" href="https://git.filii.be">GitLab</a>
+                    <a class="nav-link" href="https://conf.filii.be">Confluence</a> -->
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <img alt="Filiikot status" id="image" src="img/false.png">
+            <h1>Is het Filiikot open?</h1>
+            <p class="lead" id="statusMessage"></p>
+            <p>Temperature: <span id="temperature"></span> °C</p>
+            <p>Humidity: <span id="humidity"></span> %</p>
+        </div>
+    </main> -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
