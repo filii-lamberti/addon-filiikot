@@ -23,5 +23,5 @@ jobs:
 
     # Runs a command using the runners shell
     - name: Run a script
-      run: docker run --rm --privileged -v ~/.docker:/root/.docker -v /var/run/docker.sock:/var/run/docker.sock -v /filiibot:/data homeassistant/amd64-builder --all -t /data --test
-          # docker run --rm --privileged -v ~/.docker:/root/.docker -v /var/run/docker.sock:/var/run/docker.sock -v "$(pwd)":/data homeassistant/amd64-builder --all -t filiikot --test
+      run: docker run --rm --privileged -v ~/.docker:/root/.docker -v "$(pwd)":/data homeassistant/amd64-builder --all -t filiikot --test
+
