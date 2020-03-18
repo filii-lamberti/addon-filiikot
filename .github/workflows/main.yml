@@ -20,12 +20,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js for use with actions
-        uses: actions/setup-node@v1.1.0
-      - name: hadolint
-        run: hadolint "filiikot/Dockerfile"
-      - name: yamllint
-        run: yamllint .
+      - run: cd filiikot/rootfs/opt/filiikot
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install dependencies
+        run: npm ci
+      - run: |
+          npm install eslint \
+          eslint-config-airbnb \
+          eslint-plugin-import \
+          eslint-plugin-jsx-a11y \
+          eslint-plugin-react
+      - run: node_modules/eslint/bin/eslint.js app.js
+      # - name: hadolint
+      #   run: hadolint "filiikot/Dockerfile"
+      # - name: yamllint
+      #   run: yamllint .
 
   build:
     needs: test
