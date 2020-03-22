@@ -6,7 +6,11 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Copy root filesystem
-COPY rootfs /
+COPY rootfs/etc /etc/
+COPY rootfs/opt/filiikot/public /opt/filiikot/public/
+COPY rootfs/opt/filiikot/package-lock.json \
+    rootfs/opt/filiikot/package.json \
+    /opt/filiikot/
 
 # Setup base
 # hadolint ignore=DL3003
@@ -28,6 +32,8 @@ RUN \
     && npm cache clear --force \
     \
     && apk del --no-cache --purge .build-dependencies
+
+COPY rootfs/opt/filiikot/app.js /opt/filiikot/
 
 # Build arguments
 ARG BUILD_ARCH
