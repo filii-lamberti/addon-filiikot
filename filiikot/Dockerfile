@@ -7,7 +7,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Copy root filesystem
 COPY rootfs/etc /etc/
-COPY rootfs/opt/filiikot/public /opt/filiikot/public/
 COPY rootfs/opt/filiikot/package-lock.json \
     rootfs/opt/filiikot/package.json \
     /opt/filiikot/
@@ -33,6 +32,7 @@ RUN \
     \
     && apk del --no-cache --purge .build-dependencies
 
+COPY rootfs/opt/filiikot/public /opt/filiikot/public/
 COPY rootfs/opt/filiikot/app.js /opt/filiikot/
 
 # Build arguments
