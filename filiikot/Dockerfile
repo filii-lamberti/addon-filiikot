@@ -23,8 +23,16 @@ RUN \
     \
     && cd /opt/filiikot \
     \
+    && yarn global add modclean \
     && yarn --production \
     \
+    && modclean \
+        --path /opt/filiikot \
+        --no-progress \
+        --keep-empty \
+        --run \
+    \
+    && yarn global remove modclean \
     && yarn cache clean \
     \
     && apk del --no-cache --purge .build-dependencies
