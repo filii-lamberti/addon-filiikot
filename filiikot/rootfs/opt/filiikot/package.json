@@ -1,31 +1,19 @@
 {
-	"name": "filiikot",
-	"version": "3.0.1",
-	"description": "Node.js app voor ishetfiliikotopen.be",
-	"author": "Filii Lamberti",
-	"main": "app.js",
-	"scripts": {
-		"start": "node app.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"dependencies": {
-		"express": "^4.17.1",
-		"moment": "^2.24.0",
-		"mqtt": "^3.0.0",
-		"socket.io": "^2.3.0"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"eslint": "^6.8.0",
-		"eslint-config-airbnb-base": "^14.1.0",
-		"eslint-plugin-import": "^2.20.1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://gitlab.com/filii-lamberti/filiikot_nodejs.git"
-	},
-	"bugs": {
-		"url": "https://gitlab.com/filii-lamberti/filiikot_nodejs/issues"
-	},
-	"homepage": "https://gitlab.com/filii-lamberti/filiikot_nodejs#readme"
+  "name": "filiikot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://gitlab.com/filii-lamberti/addon-filiikot",
+  "author": "Filii Lamberti",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mqtt": "^3.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
 }
