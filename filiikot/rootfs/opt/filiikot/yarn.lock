@@ -1279,10 +1279,10 @@ mqtt-packet@^6.6.0:
     debug "^4.1.1"
     process-nextick-args "^2.0.1"
 
-mqtt@^4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/mqtt/-/mqtt-4.2.4.tgz#fcb678b5671c909c7c1b66d175bf6ceb00b39f19"
-  integrity sha512-g3tJt5UOS1Wqn/xntl4JhlJW51OM8CvgEmY8cwZ1zecE5G7uuwjSUUvgGeVDiEMWJ5vXCfZz2VMCQGNvKhzfEQ==
+mqtt@^4.2.6:
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/mqtt/-/mqtt-4.2.6.tgz#b655547a9cfb3d86bfb398948b8dbb37e2e3bfd0"
+  integrity sha512-GpxVObyOzL0CGPBqo6B04GinN8JLk12NRYAIkYvARd9ZCoJKevvOyCaWK6bdK/kFSDj3LPDnCsJbezzNlsi87Q==
   dependencies:
     commist "^1.0.0"
     concat-stream "^2.0.0"
