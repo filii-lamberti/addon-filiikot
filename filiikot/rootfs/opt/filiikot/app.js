@@ -52,7 +52,6 @@ const filiikot = {
   light: 'OFF',
   temperature: 0,
   humidity: 0,
-  people: 0,
   lastChanged: moment(0),
   lastUpdated: moment(0),
   statusMessage: 'met de gevoelens van het filiikot',
@@ -138,11 +137,6 @@ mqttClient.on('message', (topic, message) => {
     case 'filiikot/humidity':
       filiikot.humidity = message.toString();
       log(`Vochtigheid: ${filiikot.humidity}`);
-      break;
-
-    case 'filiikot/people':
-      filiikot.people = message.toString();
-      log(`People: ${filiikot.people}`);
       break;
 
     case 'filiikot/last_changed':
