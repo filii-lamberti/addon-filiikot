@@ -25,20 +25,6 @@ socket.on('update', function (data) {
   $('#humidity').html(data.humidity);
   // document.getElementById('humidity').html(data.humidity);
 
-  switch (data.people) {
-    case '0':
-      $('#people').html('Er zijn momenteel geen mensen verbonden met WiFilii.');
-      break;
-
-    case '1':
-      $('#people').html('Er is momenteel minstens één persoon verbonden met WiFilii.');
-      break;
-
-    default:
-      $('#people').html(`Er zijn momenteel minstens ${data.people} mensen verbonden met WiFilii.`);
-      break;
-  }
-
   /*
   $.each(data, function(key, val) {
     $(`#${key}`)
