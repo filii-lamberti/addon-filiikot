@@ -16,7 +16,7 @@ COPY \
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        yarn=1.22.4-r0 \
+        yarn=1.22.10-r0 \
     \
     && apk add --no-cache \
         nodejs=12.18.4-r0 \
