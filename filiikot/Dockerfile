@@ -19,7 +19,7 @@ RUN \
         yarn=1.22.10-r0 \
     \
     && apk add --no-cache \
-        nodejs=12.18.4-r0 \
+        nodejs=14.17.6-r0 \
     \
     && cd /opt/filiikot \
     \
