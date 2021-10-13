@@ -16,24 +16,17 @@ COPY \
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        yarn=1.22.10-r0 \
+        npm=7.17.0-r0 \
     \
     && apk add --no-cache \
         nodejs=14.17.6-r0 \
     \
     && cd /opt/filiikot \
     \
-    && yarn global add modclean \
-    && yarn --production \
+    && npm install --production \
     \
-    && modclean \
-        --path /opt/filiikot \
-        --no-progress \
-        --keep-empty \
-        --run \
-    \
-    && yarn global remove modclean \
-    && yarn cache clean \
+    && npx mod-pruner init --force \
+    && npx mod-pruner prune --force \
     \
     && apk del --no-cache --purge .build-dependencies
 
