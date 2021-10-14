@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 COPY rootfs/etc /etc/
 COPY \
     rootfs/opt/filiikot/package.json \
-    rootfs/opt/filiikot/yarn.lock \
+    rootfs/opt/filiikot/package-lock.json \
     /opt/filiikot/
 
 # Setup base
