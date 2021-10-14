@@ -19,7 +19,7 @@ RUN \
         npm=7.17.0-r0 \
     \
     && apk add --no-cache \
-        nodejs=14.17.6-r0 \
+        nodejs=14.18.1-r0 \
     \
     && cd /opt/filiikot \
     \
