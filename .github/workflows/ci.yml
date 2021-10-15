@@ -47,7 +47,8 @@ jobs:
           args: |
             --amd64 \
             --target filiikot \
-            --docker-hub "ghcr.io/${{ github.repository_owner }}"
+            --image "filiikot/{arch}" \
+            --docker-hub "ghcr.io/filii-lamberti"
 
   update_release_draft:
     name: Release Drafter
