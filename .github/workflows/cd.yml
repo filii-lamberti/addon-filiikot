@@ -11,18 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Build and push tagged Docker image
+        uses: actions/checkout@v2.3.4
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1.10.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set add-on version
         run: |
           ADDON_VERSION=$( cut -c12- <<< ${{ github.ref }} )
           sed -i "s/dev/$ADDON_VERSION/g" filiikot/config.json
-          docker run --rm --privileged \
-            -v ~/.docker:/root/.docker \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            -v "$(pwd)":/data homeassistant/amd64-builder \
-            --target filiikot --all \
-            --docker-user ${{ secrets.DOCKER_USERNAME }} \
-            --docker-password ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build and push tagged Docker image
+        uses: home-assistant/builder@2021.09.0
+        with:
+          args: |
+            --all
+            --target filiikot
+            --docker-hub "ghcr.io/${{ github.repository_owner }}"
 
   publish:
     needs: build
