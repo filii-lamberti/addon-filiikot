@@ -30,7 +30,7 @@ RUN \
     && apk del --no-cache --purge .build-dependencies
 
 COPY rootfs/opt/filiikot/public /opt/filiikot/public/
-COPY rootfs/opt/filiikot/app.js /opt/filiikot/
+COPY rootfs/opt/filiikot/index.js /opt/filiikot/
 
 # Build arguments
 ARG BUILD_ARCH
