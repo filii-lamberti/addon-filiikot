@@ -1,7 +1,7 @@
 {
   "name": "filiikot",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "repository": "https://gitlab.com/filii-lamberti/addon-filiikot",
   "author": "Filii Lamberti",
   "license": "MIT",
