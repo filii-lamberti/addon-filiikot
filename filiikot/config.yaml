@@ -14,7 +14,7 @@ arch:
 hassio_api: true
 homeassistant_api: true
 ports:
-  3000/tcp: 8212
+  3000/tcp: 8046 # K+O+T
 options:
 schema:
   logging: bool?
