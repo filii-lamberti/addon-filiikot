@@ -14,7 +14,7 @@ if (!supervisorToken) {
 } else {
   // from the add-on persistent data directory
   options = JSON.parse(fs.readFileSync('/data/options.json', 'utf8'));
-  options.mqttBrokerUrl = 'mqtt://core-mosquitto';
+  options.mqttBrokerUrl = `mqtt://${process.env.MQTT_HOST}`;
 }
 
 // status of logging
@@ -93,14 +93,14 @@ http.listen(port, () => {
 
 const mqttOptions = {
   clientId: 'mqttjs_filiikot',
-  username: 'ferre',
-  password: 'ferre',
+  username: process.env.MQTT_USERNAME,
+  password: process.env.MQTT_PASSWORD,
 };
 
 // MQTT
-const MQTT = require('mqtt');
+const mqtt = require('mqtt');
 // Connect to the local MQTT broker
-const mqttClient = MQTT.connect(options.mqttBrokerUrl, mqttOptions);
+const mqttClient = mqtt.connect(options.mqttBrokerUrl, mqttOptions);
 
 mqttClient.on('connect', () => { // When connected
   log('MQTT connected');

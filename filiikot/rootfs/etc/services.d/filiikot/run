@@ -4,7 +4,13 @@
 # Starts the Filiikot status page
 # ==============================================================================
 
-# Set the current working dir to /opt
+if bashio::services.available "mqtt"; then
+  export MQTT_HOST=$(bashio::services "mqtt" "host")
+  export MQTT_PORT=$(bashio::services "mqtt" "port")
+  export MQTT_USERNAME=$(bashio::services "mqtt" "username")
+  export MQTT_PASSWORD=$(bashio::services "mqtt" "password")
+
+# Set the current working dir to /opt/filiikot
 cd /opt/filiikot || bashio::exit.nok "Could not change directory to Filiikot"
 
 bashio::log.info "Starting Filiikot..."
