@@ -9,7 +9,7 @@
     "express": "^4.17.3",
     "moment": "^2.29.2",
     "mqtt": "^4.3.7",
-    "socket.io": "^2.4.0"
+    "socket.io": "^4.5.0"
   },
   "devDependencies": {
     "eslint": "8.13.0",
