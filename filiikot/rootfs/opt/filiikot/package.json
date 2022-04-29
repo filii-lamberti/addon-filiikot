@@ -6,7 +6,7 @@
   "author": "Filii Lamberti",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.18.1",
     "moment": "^2.29.2",
     "mqtt": "^4.3.7",
     "socket.io": "^2.4.0"
